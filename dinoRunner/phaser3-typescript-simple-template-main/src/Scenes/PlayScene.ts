@@ -15,6 +15,11 @@ class PlayScene extends Phaser.Scene {
         return this.game.config.height as number;
     }
 
+
+    get gameWidth() {
+        return this.game.config.width as number;
+    }
+
     constructor() {
         super('PlayScene');
     }
@@ -46,12 +51,19 @@ class PlayScene extends Phaser.Scene {
             this.startTrigger.body.reset(9999, 9999);
 
 
-            this.time.addEvent({
+            const rollOutEvent = this.time.addEvent({
                 delay: 1000 / 60,
                 loop: true,
                 callback: () => {
                     
-                    this.ground.width += 17;
+                    this.player.setVelocityX(80);
+                    this.ground.width += (17 * 2);
+
+                    if(this.ground.width >= this.gameWidth) {
+                        rollOutEvent.remove();
+                        this.player.setVelocityX(0);
+                    }
+            
                 }
             });
 

@@ -34,7 +34,12 @@ class PlayScene extends Phaser.Scene {
 
     createPlayer() {
         this.player = this.physics.add.sprite(0, this.gameHeight, 'dino-idle')
-        .setOrigin(0, 1);
+            .setOrigin(0, 1);
+
+        this.player.setGravityY(5000)
+            .setCollideWorldBounds(true);
+
+         
     }
 
 
@@ -46,7 +51,7 @@ class PlayScene extends Phaser.Scene {
         spaceBar.on('down', () => {
             this.player.setVelocityY(-1600);
         })
-        
+
     }
 
 

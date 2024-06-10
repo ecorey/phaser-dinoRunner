@@ -6,7 +6,7 @@ import PlayScene from "./Scenes/PlayScene";
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
   width: 1000,
-  height: 340,
+  height: 310,
   pixelArt: true,
   transparent: true,
   physics: {

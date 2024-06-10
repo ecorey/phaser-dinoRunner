@@ -34,7 +34,18 @@ class PlayScene extends Phaser.Scene {
 
 
         this.physics.add.overlap(this.startTrigger, this.player, () => {
-            console.log('Collision detected!');
+            
+            if (this.startTrigger.y === 10 ) {
+
+                this.startTrigger.body.reset(0, this.gameHeight);
+
+                return;
+            }
+
+
+            
+
+            
         })
 
 

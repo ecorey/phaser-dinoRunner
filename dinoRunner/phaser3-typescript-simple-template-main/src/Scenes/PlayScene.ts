@@ -43,12 +43,14 @@ class PlayScene extends Phaser.Scene {
                 return;
             }
 
-            this.startTrigger.body.reset(9999, 99999);
+            this.startTrigger.body.reset(9999, 9999);
 
 
             this.time.addEvent({
-                delay: 100,
+                delay: 1000 / 60,
+                loop: true,
                 callback: () => {
+                    
                     this.ground.width += 17;
                 }
             });

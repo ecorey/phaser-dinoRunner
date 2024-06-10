@@ -8,6 +8,7 @@ class PlayScene extends Phaser.Scene {
 
 
     player: Player;
+    ground: Phaser.GameObjects.TileSprite;
     startTrigger: Phaser.Types.Physics.Arcade.SpriteWithDynamicBody;
 
     get gameHeight() {
@@ -42,6 +43,15 @@ class PlayScene extends Phaser.Scene {
                 return;
             }
 
+            this.startTrigger.body.reset(9999, 99999);
+
+
+            this.time.addEvent({
+                delay: 100,
+                callback: () => {
+                    this.ground.width += 17;
+                }
+            });
 
             
 
@@ -54,9 +64,18 @@ class PlayScene extends Phaser.Scene {
 
     createEnvironment() {
 
-        this.add.tileSprite(0, this.gameHeight, 88, 26, 'ground').setOrigin(0, 1);
+        this.ground = this.add.tileSprite(0, this.gameHeight, 88, 26, 'ground').setOrigin(0, 1);
+
 
     }
+
+
+    update(time: number, delta: number) : void {
+
+    }
+      
+
+
 
 
     createPlayer() {

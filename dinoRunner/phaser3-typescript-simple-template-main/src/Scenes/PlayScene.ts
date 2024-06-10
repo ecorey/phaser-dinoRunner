@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 import { Player } from "../entities/Player";    
 import GameScene from "./GameScene";
+import { PRELOAD_CONFIG } from "..";
 
 
 
@@ -110,7 +111,7 @@ class PlayScene extends GameScene {
     spawnObstacle() {
 
         // random num between 1 and 6
-        const obstacleNumber = Math.floor(Math.random() * 6 ) + 1;
+        const obstacleNumber = Math.floor(Math.random() * PRELOAD_CONFIG.cactusesCount ) + 1;
         const distance = Phaser.Math.Between(600, 900);
 
         this.obstacles

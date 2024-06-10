@@ -10,7 +10,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
 
 
     constructor(scene: GameScene, x: number, y: number) {
-        super(scene, x, y, 'dino-idle');
+        super(scene, x, y, 'dino-run');
 
 
         scene.add.existing(this);
@@ -70,7 +70,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             return;
         }
 
-        
+
         // freezes the dino when jumping
         if(this.body.deltaAbsY() > 0){
             this.anims.stop();

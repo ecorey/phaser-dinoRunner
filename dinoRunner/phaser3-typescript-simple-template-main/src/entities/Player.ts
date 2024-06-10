@@ -60,6 +60,15 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             this.setVelocityY(-1500);
         }
 
+        console.log(this.body.y);
+
+        // freezes the dino when jumping
+        if(this.body.deltaAbsY() > 0){
+            this.anims.stop();
+        } else {
+            this.playRunAnimation();
+        }
+
     }   
 
 

@@ -50,7 +50,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         // pressing space bar makes the dino jump once
         const isSpaceJustDown = Phaser.Input.Keyboard.JustDown(space);
 
-    
+        // checks if the dino is on the floor to jump
         const onFloor = (this.body as Phaser.Physics.Arcade.Body).onFloor()
         
         

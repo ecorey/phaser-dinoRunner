@@ -37,7 +37,8 @@ class PlayScene extends Phaser.Scene {
             .setOrigin(0, 1);
 
         this.player.setGravityY(5000)
-            .setCollideWorldBounds(true);
+            .setCollideWorldBounds(true)
+            .setBodySize(44, 92);
 
          
     }

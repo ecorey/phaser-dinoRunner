@@ -65,6 +65,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
         // freezes the dino when jumping
         if(this.body.deltaAbsY() > 0){
             this.anims.stop();
+            // sets the frame when jumping
+            this.setTexture('dino-run', 0);
         } else {
             this.playRunAnimation();
         }

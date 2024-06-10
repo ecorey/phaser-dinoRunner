@@ -52,9 +52,9 @@ class PlayScene extends Phaser.Scene {
 
         this.player = new Player(this, 0, this.gameHeight);
 
-
-         
     }
+
+
 
 
    

@@ -10,8 +10,9 @@ class PlayScene extends GameScene {
     player: Player;
     ground: Phaser.GameObjects.TileSprite;
     startTrigger: Phaser.Types.Physics.Arcade.SpriteWithDynamicBody;
-    
 
+    spawnInterval: number = 1500;
+    spawnTime: number = 0;
     
 
     constructor() {
@@ -82,6 +83,14 @@ class PlayScene extends GameScene {
 
     update(time: number, delta: number) : void {
 
+        this.spawnTime += delta;
+
+        if(this.spawnTime >= this.spawnInterval){
+            console.log('spawn');
+
+            this.spawnTime = 0;
+        }
+        
     }
       
 

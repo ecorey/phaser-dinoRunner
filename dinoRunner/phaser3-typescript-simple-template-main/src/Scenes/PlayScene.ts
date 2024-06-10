@@ -10,6 +10,7 @@ class PlayScene extends Phaser.Scene {
     player: Player;
     ground: Phaser.GameObjects.TileSprite;
     startTrigger: Phaser.Types.Physics.Arcade.SpriteWithDynamicBody;
+    gameIsNotRunning: boolean = false;
 
     get gameHeight() {
         return this.game.config.height as number;
@@ -63,6 +64,7 @@ class PlayScene extends Phaser.Scene {
                         rollOutEvent.remove();
                         this.ground.width = this.gameWidth;
                         this.player.setVelocityX(0);
+                        this.gameIsNotRunning = true;
                     }
             
                 }

@@ -37,6 +37,8 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             .setCollideWorldBounds(true)
             .setBodySize(44, 92);
 
+        this.registerAnimations();
+
     }
 
 
@@ -58,7 +60,25 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             this.setVelocityY(-1500);
         }
 
+    }   
+
+
+
+    registerAnimations() {
+        this.anims.create({
+            key: 'dino-run',
+            frames: this.anims.generateFrameNumbers('dino-run', { start: 2, end: 3 }),
+            frameRate: 10,
+            repeat: -1
+        });
     }
+
+
+
+    playRunAnimation() {
+        this.play('dino-run', true);
+    }
+
 
 
     

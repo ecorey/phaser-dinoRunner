@@ -15,6 +15,9 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
     }
 
 
+
+
+
     init() {
 
         this
@@ -23,7 +26,22 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             .setCollideWorldBounds(true)
             .setBodySize(44, 92);
 
+        this.registerPlayerControl();
+
     }
+
+
+    registerPlayerControl() {
+       
+        const spaceBar = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
+
+        spaceBar.on('down', () => {
+            this.setVelocityY(-1600);
+        })
+
+    }
+
 
 
 }

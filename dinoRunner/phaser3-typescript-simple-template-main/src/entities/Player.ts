@@ -63,7 +63,7 @@ export class Player extends Phaser.Physics.Arcade.Sprite {
             this.setVelocityY(-1500);
         }
 
-        console.log(this.body.y);
+        // console.log(this.body.y);
 
 
         if(!this.scene.gameIsNotRunning){

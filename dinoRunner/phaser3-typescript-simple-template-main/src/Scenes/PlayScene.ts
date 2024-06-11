@@ -101,6 +101,18 @@ class PlayScene extends GameScene {
 
         Phaser.Actions.IncX(this.obstacles.getChildren(), -this.obstacleSpeed);
 
+
+
+
+        // console.log(this.obstacles.getChildren().length);
+
+
+
+        this.obstacles.getChildren().forEach((obstacle: Phaser.Types.Physics.Arcade.SpriteWithDynamicBody ) => {
+            if(obstacle.getBounds().right < 0) {
+                this.obstacles.remove(obstacle);
+            }
+        } );
     }
       
 

@@ -27,6 +27,10 @@ class PreloadScene extends Phaser.Scene {
         this.load.spritesheet('dino-run', 'assets/dino-run.png', {
             frameWidth: 88,
             frameHeight: 94 
+
+
+
+            
         });
 
 
